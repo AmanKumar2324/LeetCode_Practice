@@ -1,0 +1,49 @@
+/*1837. Sum of Digits in Base K
+Easy
+421
+34
+Companies
+Given an integer n (in base 10) and a base k, return the sum of the digits of n after converting n from base 10 to base k.
+
+After converting, each digit should be interpreted as a base 10 number, and the sum should be returned in base 10.
+
+ 
+
+Example 1:
+
+Input: n = 34, k = 6
+Output: 9
+Explanation: 34 (base 10) expressed in base 6 is 54. 5 + 4 = 9.
+Example 2:
+
+Input: n = 10, k = 10
+Output: 1
+Explanation: n is already in base 10. 1 + 0 = 1.*/
+
+class Solution {
+public:
+    int sumBase(int n, int k) {
+        int finalnum=0;
+        int i=0;
+        while(n)
+        {
+            int rem=n%k;
+            finalnum=(rem*pow(10,i))+finalnum;
+            i++;
+            n/=k;
+        }
+        return DigitsSum(finalnum);
+        
+    }
+    int DigitsSum(int n)
+    {
+        int sum=0;
+        while(n)
+        {
+            int d=n%10;
+            sum=sum+d;
+            n/=10;
+        }
+        return sum;
+    }
+};
