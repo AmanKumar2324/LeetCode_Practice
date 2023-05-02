@@ -30,10 +30,26 @@ Example 3:
 Input: n = 1
 Output: 1*/
 
+#include<iostream>
+#include<math.h>
+using namespace std;
+
 class Solution {
 public:
     int bulbSwitch(int n) {
+        cout<<"AMABN";
+        
         return sqrt(n);
         
+    }
+    int main()
+    {
+        int n;
+        cout<<"Enter any number"<<endl;
+        cin>>n;
+
+        int a=bulbSwitch(25);
+        cout<<a;
+        return 0;
     }
 };
